@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mark Entry</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+<script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+</head>
+<body style="background-color:cyan;">
+    <center>
+    <br><br><br>
+    <div class="ui card">
+        <div class="content">
+            <a class="header">Mark Table</a>
+            <div class="description">
+              Enter your Subject wise Marks Here 
+            </div>
+          </div>
+        <form class="ui form" id="myform" onsubmit="return(calc());">
+            <table class="ui celled table">
+                <tr>
+                    <th>Tamil</th>
+                    <td><input type = "number" name = "m1" min="0" max="100"/></td>
+                 </tr>
+                 <tr>
+                    <th>English</th>
+                    <td><input type = "number" name = "m2" min="0" max="100"/></td>
+                 </tr>
+                 <tr>
+                    <th>Maths</th>
+                    <td><input type = "number" name = "m3" min="0" max="100"/></td>
+                 </tr>
+                 <tr>
+                    <th>Science</th>
+                    <td><input type = "number" name = "m4" min="0" max="100" /></td>
+                 </tr>
+                 <tr>
+                    <th>Social Science</th>
+                    <td><input type = "number" name = "m5" min="0" max="100"/></td>
+                 </tr>
+              </table>
+              <button class="ui green button" type="submit">Submit</button>
+        </form>
+    </div>
+    <p id="total"></p>
+    <p id="percent"></p>
+    </center>
+    <script>
+        var tot=0;
+        var avg=0;
+        function calc()
+        {
+            tot=parseInt(document.getElementById("myform").m1.value)+parseInt(document.getElementById("myform").m2.value)+parseInt(document.getElementById("myform").m3.value)+parseInt(document.getElementById("myform").m4.value)+parseInt(document.getElementById("myform").m5.value);
+            avg=tot/5;
+            document.getElementById("total").innerHTML="Total : "+tot;
+            document.getElementById("percent").innerHTML="Percentage : "+avg+"%";
+            return false;
+        }
+    </script>
+</body>
+</html>
